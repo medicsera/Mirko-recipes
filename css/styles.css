@@ -1,0 +1,348 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff8f0;
+    color: #5a3d1e;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #d2691e;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+#app {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    background: #fffdfa;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(210, 105, 30, 0.10);
+    padding: 32px 28px 40px 28px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    width: auto;
+    margin-bottom: 24px;
+}
+
+.filters input[type="text"] {
+    width: 320px;
+    font-size: 1.1em;
+    padding: 12px 16px;
+    border: 2px solid #ffb347;
+    border-radius: 10px;
+    background: #fffdfa;
+    color: #5a3d1e;
+    margin-bottom: 0;
+}
+
+.filters select {
+    height: 52px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border: 2px solid #ffb347;
+    background: #fffdfa;
+    color: #5a3d1e;
+    padding: 0 14px;
+    margin-left: 0;
+    margin-right: 8px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.filters select:focus {
+    border-color: #d2691e;
+}
+
+.filters button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc80 100%);
+    color: #5a3d1e;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px 12px 44px;
+    font-size: 1.08em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.10);
+    margin-right: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    width: auto;
+    min-width: 180px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.filters button:before {
+    content: "🍴";
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.filters button:hover {
+    background: linear-gradient(90deg, #ffcc80 0%, #ffb347 100%);
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+
+.filters input[type="text"]:focus {
+    border-color: #d2691e;
+    box-shadow: 0 0 8px #ffe0b2;
+}
+
+.filters input[type="text"]:focus, .filters select:focus {
+    border-color: #d2691e;
+}
+
+.filters button,
+button {
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc80 100%);
+    color: #5a3d1e;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 38px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.10);
+    margin-right: 10px;
+    margin-top: 3px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    position: relative;
+}
+
+.filters button:before,
+button:before {
+    content: "🍴";
+    position: absolute;
+    left: 14px;
+    top: 11px;
+    font-size: 1.2em;
+}
+
+.filters button:hover,
+button:hover {
+    background: linear-gradient(90deg, #ffcc80 0%, #ffb347 100%);
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Кнопка "Назад" */
+#backToListBtn, .back-btn, #backBtn {
+    background: linear-gradient(90deg, #ffe082 0%, #ffb347 100%);
+    color: #5a3d1e;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 38px 14px 52px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.10);
+    margin: 12px 0 18px 0;
+    position: relative;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+}
+
+#backToListBtn:before, .back-btn:before, #backBtn:before {
+    content: "⬅️";
+    position: absolute;
+    left: 18px;
+    top: 12px;
+    font-size: 1.2em;
+    transition: left 0.2s;
+}
+
+#backToListBtn:hover, .back-btn:hover, #backBtn:hover {
+    background: linear-gradient(90deg, #ffb347 0%, #ffe082 100%);
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+#backToListBtn:active, .back-btn:active, #backBtn:active {
+    left: 16px;
+}
+
+/* Кнопка "Подробнее" */
+.details-btn {
+    background: linear-gradient(90deg, #ffb347 0%, #ffd54f 100%);
+    color: #5a3d1e;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 40px 12px 54px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.10);
+    margin-top: 10px;
+    position: relative;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+}
+
+.details-btn:before {
+    content: "🔎";
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    font-size: 1.15em;
+    transition: left 0.2s;
+}
+
+.details-btn:hover {
+    background: linear-gradient(90deg, #ffd54f 0%, #ffb347 100%);
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.stats {
+    background: #fff3e6;
+    border-left: 6px solid #ffb347;
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    color: #6a4a24;
+    font-size: 1.1em;
+}
+
+.recipe-card {
+    display: flex;
+    align-items: flex-start;
+    background: #fffdfa;
+    border: 1.5px solid #f3d6b6;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(210, 105, 30, 0.07);
+    padding: 18px;
+    margin-bottom: 20px;
+    gap: 18px;
+    transition: box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 4px 24px rgba(210, 105, 30, 0.13);
+}
+
+.recipe-card img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ffb347;
+    background: #fff3e6;
+}
+
+.recipe-details {
+    flex: 1;
+}
+
+.recipe-details h3 {
+    margin: 0 0 8px 0;
+    color: #b35c1e;
+    font-size: 1.2em;
+}
+
+.recipe-details p {
+    margin: 5px 0;
+    color: #6a4a24;
+}
+
+.recipe-details a {
+    display: inline-block;
+    margin-top: 10px;
+    background: #ffb347;
+    color: #fffdfa;
+    padding: 7px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.recipe-details a:hover {
+    background: #d2691e;
+}
+
+#welcomeView, .welcome {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#welcomeView h1, .welcome h1 {
+    font-size: 2.2em;
+    margin-bottom: 16px;
+}
+
+#welcomeView button, .welcome button {
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc80 100%);
+    color: #5a3d1e;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 36px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.10);
+    margin-top: 20px;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+#welcomeView button:hover, .welcome button:hover {
+    background: linear-gradient(90deg, #ffcc80 0%, #ffb347 100%);
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.13);
+}
+
+#welcomeView input, .welcome input {
+    display: inline-block;
+    padding: 12px 36px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1.5px solid #e8c9a2;
+    background: #fffdfa;
+    color: #5a3d1e;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.07);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#welcomeView input:focus, .welcome input:focus {
+    border-color: #d2691e;
+    box-shadow: 0 4px 16px rgba(210, 105, 30, 0.10);
+}
+
+#mainView, .hello{
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.5em;
+}
+
+@media (max-width: 650px) {
+    #app {
+        padding: 12px 4px 20px 4px;
+    }
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .recipe-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .recipe-card img {
+        width: 100%;
+        height: 160px;
+    }
+}
