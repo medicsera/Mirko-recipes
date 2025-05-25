@@ -176,7 +176,7 @@ function setupMainView() {
 
         const detailsHtml = `
     <div class="recipe-detail-view">
-      <button id="backToListBtn">&larr; Назад к списку</button>
+      <button id="backToListBtn">Назад к списку</button>
       <h2>${titleRu}</h2>
       <img src="${info.image}" alt="${titleRu}" style="max-width:320px; border-radius:10px; margin-bottom:18px;">
       <div class="nutrition">
